@@ -4,13 +4,21 @@ import { AiFillHome } from 'react-icons/ai'
 import { FaUserAlt } from 'react-icons/fa'
 import { GoProject } from 'react-icons/go'
 import { HiOutlineCode } from 'react-icons/hi'
+import styled from 'styled-components'
+
+const List = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: violet;
+  border-radius: 100%;
+  padding: 5px;
+`
 
 function Navigation() {
-  return (
-    <nav className='absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-violet-900/80 rounded-full p-2'>
-      asd
-    </nav>
-  )
+  return <List></List>
 }
 
 export default Navigation

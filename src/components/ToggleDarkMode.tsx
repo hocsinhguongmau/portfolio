@@ -1,6 +1,7 @@
 import Lottie from 'lottie-react'
 
 import React, { useRef } from 'react'
+import styled from 'styled-components'
 import toggleIcon from '~/lotties/toggle.json'
 import useToggleStore from '~/store/themeStore'
 const ToggleButton = () => {
@@ -41,11 +42,20 @@ const ToggleButton = () => {
   )
 }
 
+const WrapToggle = styled.div`
+  width: 6rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+  cursor: pointer;
+`
+
 function ToggleDarkMode() {
   return (
-    <div className='w-24 absolute top-2 right-2 z-50 cursor-pointer'>
+    <WrapToggle>
       <ToggleButton />
-    </div>
+    </WrapToggle>
   )
 }
 

@@ -1,14 +1,50 @@
 import { motion } from 'framer-motion'
 import Lottie from 'lottie-react'
+import styled from 'styled-components'
 import frontend from '~/lotties/frontend.json'
+
+const WrapAnimation = styled.div`
+  width: 2/3;
+  margin-left: auto;
+  margin-right: auto;
+`
 
 const Animation = () => {
   return (
-    <div className='w-2/3 mx-auto'>
+    <WrapAnimation>
       <Lottie animationData={frontend} autoplay={true} loop={true} />
-    </div>
+    </WrapAnimation>
   )
 }
+
+const Wrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+`
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+const Title = styled.p`
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+`
+
+const Line = styled.p`
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+`
 
 const Home = () => {
   const variants = {
@@ -22,17 +58,14 @@ const Home = () => {
   }
   return (
     <motion.div variants={variants} initial='initial' animate='animate'>
-      <div>
-        <title>Portfolio</title>
-        <div className='mx-auto max-w-5xl w-full p-12 rounded-xl grid grid-cols-2 '>
-          <div className='flex flex-col justify-center'>
-            <p className='text-3xl font-bold mb-2'>Hello</p>
-            <p className='text-2xl'>My name is Thang Nguyen</p>
-            <p className='text-2xl'>Frontend developer based in Helsinki</p>
-          </div>
-          <Animation />
-        </div>
-      </div>
+      <Wrapper>
+        <Column>
+          <Title>Hello</Title>
+          <Line>My name is Thang Nguyen</Line>
+          <Line>Frontend developer based in Helsinki</Line>
+        </Column>
+        <Animation />
+      </Wrapper>
     </motion.div>
   )
 }
