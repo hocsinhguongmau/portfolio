@@ -24,10 +24,10 @@ const Layout = ({ children }: Props) => {
   return (
     <WrapLayout>
       <AnimationBackground />
-      <Navigation />
+      {/* <Navigation />
       <ToggleDarkMode />
       <Social />
-      <WrapChild>{children}</WrapChild>
+      <WrapChild>{children}</WrapChild> */}
     </WrapLayout>
   )
 }

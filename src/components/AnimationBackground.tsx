@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react'
-import { OrbitControls, PerspectiveCamera, useGLTF } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React, { Suspense, useRef } from 'react'
+import { OrbitControls, MapControls, useGLTF } from '@react-three/drei'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import useToggleStore from '~/store/themeStore'
 import styled from 'styled-components'
@@ -27,6 +27,22 @@ const Background = styled.div`
   height: 100vh;
   z-index: 0;
 `
+
+function SkyBox() {
+  const { scene } = useThree()
+  const loader = new THREE.CubeTextureLoader()
+  const texture = loader.load([
+    '/skybox/posx.jpg',
+    '/skybox/negx.jpg',
+    '/skybox/posy.jpg',
+    '/skybox/negy.jpg',
+    '/skybox/posz.jpg',
+    '/skybox/negz.jpg',
+  ])
+
+  scene.background = texture
+  return null
+}
 
 function AnimationBackground() {
   const toggle = useToggleStore((state) => state.toggle)
@@ -55,10 +71,14 @@ function AnimationBackground() {
         // minPolarAngle={0}
         // enablePan={false}
         // enableZoom={false}
+        // autoRotate={true}
         />
+        <SkyBox />
       </Canvas>
     </Background>
   )
 }
 
 export default AnimationBackground
+
+useGLTF.preload('/models/background/scene.gltf')

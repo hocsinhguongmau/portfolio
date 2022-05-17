@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import frontend from '~/lotties/frontend.json'
 
 const WrapAnimation = styled.div`
-  width: 2/3;
+  width: 66.66%;
   margin-left: auto;
   margin-right: auto;
 `
