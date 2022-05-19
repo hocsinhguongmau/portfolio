@@ -64,7 +64,6 @@ const Home = () => {
           <Line>My name is Thang Nguyen</Line>
           <Line>Frontend developer based in Helsinki</Line>
         </Column>
-        <Animation />
       </Wrapper>
     </motion.div>
   )

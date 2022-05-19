@@ -24,8 +24,8 @@ const Layout = ({ children }: Props) => {
   return (
     <WrapLayout>
       <AnimationBackground />
-      {/* <Navigation />
-      <ToggleDarkMode />
+      {/* <Navigation /> */}
+      {/* <ToggleDarkMode />
       <Social />
       <WrapChild>{children}</WrapChild> */}
     </WrapLayout>

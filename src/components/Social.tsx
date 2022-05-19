@@ -17,6 +17,7 @@ const Navigation = styled.ul`
   line-height: 2.25rem;
   color: #000;
   list-style: none;
+  margin: 0;
 `
 
 const NavLink = styled.a`

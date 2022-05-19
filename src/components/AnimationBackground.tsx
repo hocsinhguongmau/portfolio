@@ -1,24 +1,41 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import { OrbitControls, MapControls, useGLTF } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import useToggleStore from '~/store/themeStore'
 import styled from 'styled-components'
 
-function Model() {
-  const { scene, animations } = useGLTF('/models/background/scene.gltf')
-  let mixer = new THREE.AnimationMixer(scene)
-  animations.forEach((clip) => {
-    const action = mixer.clipAction(clip)
-    action.play()
-  })
-  useFrame((state, delta) => {
-    mixer.update(delta)
-  })
-
-  return <primitive object={scene} />
+type MaskModel = {
+  rotation: {
+    x?: number
+    y?: number
+    z?: number
+  }
 }
 
+function Model() {
+  const { scene, animations } = useGLTF('/models/background/scene.gltf')
+  const ship = useRef<MaskModel>()
+  let mixer = new THREE.AnimationMixer(scene)
+
+  useFrame(({ mouse }) => {
+    ship.current!.rotation.z = mouse.x * 0.5
+    ship.current!.rotation.y = mouse.x * 0.5
+    ship.current!.rotation.x = -mouse.y * 0.5
+  })
+
+  // animations.forEach((clip) => {
+  //   const action = mixer.clipAction(clip)
+  //   action.play()
+  // })
+  // useFrame((state, delta) => {
+  //   mixer.update(delta)
+  // })
+
+  return (
+    <primitive ref={ship} scale={0.3} object={scene} position={[0, 0, 0]} />
+  )
+}
 const Background = styled.div`
   position: absolute;
   top: 0;
@@ -26,54 +43,17 @@ const Background = styled.div`
   width: 100%;
   height: 100vh;
   z-index: 0;
+  background: #fff;
 `
 
-function SkyBox() {
-  const { scene } = useThree()
-  const loader = new THREE.CubeTextureLoader()
-  const texture = loader.load([
-    '/skybox/posx.jpg',
-    '/skybox/negx.jpg',
-    '/skybox/posy.jpg',
-    '/skybox/negy.jpg',
-    '/skybox/posz.jpg',
-    '/skybox/negz.jpg',
-  ])
-
-  scene.background = texture
-  return null
-}
-
 function AnimationBackground() {
-  const toggle = useToggleStore((state) => state.toggle)
-
   return (
     <Background>
-      <Canvas camera={{ position: [10, 10, 10], fov: 50 }}>
+      <Canvas>
         <ambientLight intensity={1} />
-        <directionalLight
-        // castShadow
-        // position={[10, 10, 10]}
-        // shadow-mapSize={[1024, 1024]}
-        >
-          {/* <orthographicCamera
-            attach='shadow-camera'
-            args={[-10, 10, 10, -10]}
-          /> */}
-        </directionalLight>
         <Suspense fallback={null}>
           <Model />
         </Suspense>
-        <OrbitControls
-        // maxAzimuthAngle={Math.PI / 4}
-        // maxPolarAngle={Math.PI / 2.3}
-        // minAzimuthAngle={-Math.PI / 4}
-        // minPolarAngle={0}
-        // enablePan={false}
-        // enableZoom={false}
-        // autoRotate={true}
-        />
-        <SkyBox />
       </Canvas>
     </Background>
   )
