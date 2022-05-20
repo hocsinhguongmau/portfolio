@@ -19,29 +19,27 @@ function Model() {
   const mouse = useMouseStore((state) => state.mouse)
   useFrame(() => {
     ship.current!.rotation.z = -mouse.x / 3000
-    ship.current!.rotation.y = mouse.x / 3000
-    ship.current!.rotation.x = mouse.y / 1000
+    ship.current!.rotation.y = mouse.x / 5000
+    ship.current!.rotation.x = mouse.y / 1000 - 50
   })
 
   return (
-    <primitive ref={ship} scale={0.3} object={scene} position={[0, 0, 0]} />
+    <primitive ref={ship} scale={1.5} object={scene} position={[0, 0, 0]} />
   )
 }
 const Background = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-  background: #fff;
+  height: 150px;
+  z-index: 10;
+  position: relative;
+  margin-top: 20px;
 `
 
 function AnimationBackground() {
   return (
     <Background>
       <Canvas>
-        <ambientLight intensity={1} />
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} />
         <Suspense fallback={null}>
           <Model />
         </Suspense>

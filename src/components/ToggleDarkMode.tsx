@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import toggleIcon from '~/lotties/toggle.json'
 import useToggleStore from '~/store/themeStore'
 const ToggleButton = () => {
-  const toggle = useToggleStore((state: any) => state.toggle)
-  const setToggle = useToggleStore((state: any) => state.setToggle)
+  const toggle = useToggleStore((state) => state.toggle)
+  const setToggle = useToggleStore((state) => state.setToggle)
   const ref = useRef<any>(null)
 
   const toggleButton = () => {
@@ -22,23 +22,20 @@ const ToggleButton = () => {
   }
 
   return (
-    <>
-      {!toggle ? 'light' : 'dark'}
-      <Lottie
-        lottieRef={ref}
-        animationData={toggleIcon}
-        onClick={toggleButton}
-        autoplay={false}
-        loop={false}
-        onDOMLoaded={() => {
-          if (!toggle) {
-            ref.current.goToAndStop(45, true)
-          } else {
-            ref.current.goToAndStop(0, true)
-          }
-        }}
-      />
-    </>
+    <Lottie
+      lottieRef={ref}
+      animationData={toggleIcon}
+      onClick={toggleButton}
+      autoplay={false}
+      loop={false}
+      onDOMLoaded={() => {
+        if (!toggle) {
+          ref.current.goToAndStop(45, true)
+        } else {
+          ref.current.goToAndStop(0, true)
+        }
+      }}
+    />
   )
 }
 
@@ -47,7 +44,7 @@ const WrapToggle = styled.div`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  z-index: 10;
+  z-index: 100;
   cursor: pointer;
 `
 
