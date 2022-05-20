@@ -1,11 +1,11 @@
-import React, { Suspense, useRef, useState } from 'react'
-import { OrbitControls, MapControls, useGLTF } from '@react-three/drei'
+import React, { Suspense, useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import * as THREE from 'three'
 import useToggleStore from '~/store/themeStore'
 import styled from 'styled-components'
+import useMouseStore from '~/store/mouseStore'
 
-type MaskModel = {
+type ModelType = {
   rotation: {
     x?: number
     y?: number
@@ -14,23 +14,14 @@ type MaskModel = {
 }
 
 function Model() {
-  const { scene, animations } = useGLTF('/models/background/scene.gltf')
-  const ship = useRef<MaskModel>()
-  let mixer = new THREE.AnimationMixer(scene)
-
-  useFrame(({ mouse }) => {
-    ship.current!.rotation.z = mouse.x * 0.5
-    ship.current!.rotation.y = mouse.x * 0.5
-    ship.current!.rotation.x = -mouse.y * 0.5
+  const { scene } = useGLTF('/models/background/scene.gltf')
+  const ship = useRef<ModelType>()
+  const mouse = useMouseStore((state) => state.mouse)
+  useFrame(() => {
+    ship.current!.rotation.z = -mouse.x / 3000
+    ship.current!.rotation.y = mouse.x / 3000
+    ship.current!.rotation.x = mouse.y / 1000
   })
-
-  // animations.forEach((clip) => {
-  //   const action = mixer.clipAction(clip)
-  //   action.play()
-  // })
-  // useFrame((state, delta) => {
-  //   mixer.update(delta)
-  // })
 
   return (
     <primitive ref={ship} scale={0.3} object={scene} position={[0, 0, 0]} />

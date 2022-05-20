@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import AnimationBackground from './AnimationBackground'
 import Navigation from './Navigation'
 import Social from './Social'
-import ToggleDarkMode from './ToggleDarkMode'
+import { useEffect, useState } from 'react'
+import useMouseStore from '~/store/mouseStore'
+
 type Props = {
   children: JSX.Element
 }
@@ -21,6 +23,16 @@ const WrapChild = styled.div`
 `
 
 const Layout = ({ children }: Props) => {
+  const { mouse, setMouse } = useMouseStore()
+  useEffect(() => {
+    const update = (e: MouseEvent) => {
+      setMouse({ x: e.x, y: e.y })
+    }
+    window.addEventListener('mousemove', update)
+    return () => {
+      window.removeEventListener('mousemove', update)
+    }
+  }, [mouse.x, mouse.y])
   return (
     <WrapLayout>
       <AnimationBackground />
