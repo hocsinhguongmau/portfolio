@@ -4,8 +4,14 @@ import Navigation from './Navigation'
 import Social from './Social'
 import { useEffect, useState } from 'react'
 import useMouseStore from '~/store/mouseStore'
-import { GlobalStyles } from '../styled/globalStyles'
-import { darkTheme, lightTheme } from '../styled/Themes'
+import {
+  BODY_DARK,
+  BODY_LIGHT,
+  darkTheme,
+  lightTheme,
+  TEXT_DARK,
+  TEXT_LIGHT,
+} from '../styled/Themes'
 import useToggleStore from '~/store/themeStore'
 import ToggleDarkMode from './ToggleDarkMode'
 import SidePanel from './SidePanel'
@@ -16,9 +22,14 @@ type Props = {
 const WrapLayout = styled.div`
   position: relative;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  transition: all 0.3s ease-in;
+  background: ${(props: ThemePropsType) =>
+    props.toggle ? BODY_DARK : BODY_LIGHT};
+  color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
 `
 
 const WrapChild = styled.div`
@@ -43,20 +54,15 @@ const Layout = ({ children }: Props) => {
     }
   }, [mouse.x, mouse.y])
   return (
-    <ThemeProvider theme={toggle === false ? lightTheme : darkTheme}>
-      <>
-        <GlobalStyles />
-        <WrapLayout>
-          <SidePanel />
-          <ToggleDarkMode />
-          <Social />
-          <WrapChild>
-            <Navigation />
-            {children}
-          </WrapChild>
-        </WrapLayout>
-      </>
-    </ThemeProvider>
+    <WrapLayout toggle={toggle}>
+      <SidePanel />
+      <ToggleDarkMode />
+      <Social />
+      <WrapChild>
+        <Navigation />
+        {children}
+      </WrapChild>
+    </WrapLayout>
   )
 }
 export default Layout

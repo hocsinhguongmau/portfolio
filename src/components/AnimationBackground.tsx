@@ -31,7 +31,7 @@ const Background = styled.div`
   height: 150px;
   z-index: 10;
   position: relative;
-  margin-top: 20px;
+  padding-top: 20px;
 `
 
 function AnimationBackground() {

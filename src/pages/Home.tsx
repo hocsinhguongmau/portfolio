@@ -48,7 +48,7 @@ const Line = styled.p`
 
 const Home = () => {
   const variants = {
-    initial: { opacity: 0, y: '30%', scale: 0.5 },
+    initial: { opacity: 0, y: '100px', scale: 0.5 },
     animate: {
       opacity: 1,
       scale: 1,

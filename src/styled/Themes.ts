@@ -1,9 +1,9 @@
 export const BODY_LIGHT = '#FFF'
 export const TEXT_LIGHT = '#333'
 export const BACKGROUND_LIGHT = '#fceeb5'
-export const BODY_DARK = '#320064'
+export const BODY_DARK = '#3E4758'
 export const TEXT_DARK = '#FFF'
-export const BACKGROUND_DARK = '#230046'
+export const BACKGROUND_DARK = '#262E40'
 
 export const lightTheme: ThemeType = {
   body: BODY_LIGHT,

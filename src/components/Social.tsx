@@ -42,6 +42,7 @@ const Line = styled.span`
     props.toggle ? TEXT_DARK : TEXT_LIGHT};
   margin-left: auto;
   margin-right: auto;
+  transition: all ease-in 0.3s;
 `
 
 function Social() {
