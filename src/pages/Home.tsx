@@ -20,18 +20,11 @@ const Animation = () => {
 const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  background: #000;
+  border-radius: 9999px;
+  text-align: center;
   max-width: 64rem;
-  width: 100%;
-  padding: 3rem;
-  border-radius: 0.75rem;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-`
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `
 
 const Title = styled.p`
@@ -59,11 +52,9 @@ const Home = () => {
   return (
     <motion.div variants={variants} initial='initial' animate='animate'>
       <Wrapper>
-        <Column>
-          <Title>Hello</Title>
-          <Line>My name is Thang Nguyen</Line>
-          <Line>Frontend developer based in Helsinki</Line>
-        </Column>
+        <Title>Hello</Title>
+        <Line>My name is Thang Nguyen</Line>
+        <Line>Frontend developer based in Helsinki</Line>
       </Wrapper>
     </motion.div>
   )

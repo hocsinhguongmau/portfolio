@@ -14,6 +14,7 @@ import {
   TEXT_DARK,
   TEXT_LIGHT,
 } from '~/styled/Themes'
+import { Link, NavLink } from 'react-router-dom'
 
 const List = styled.div`
   position: absolute;
@@ -31,7 +32,7 @@ const List = styled.div`
   transition: all 0.3s ease-in;
   gap: 0.75rem;
 `
-const Icon = styled.a`
+const Icon = styled(NavLink)`
   color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
   font-size: 1.5rem;
   line-height: 0.75rem;
@@ -53,22 +54,34 @@ function Navigation() {
   return (
     <List toggle={toggle}>
       <li>
-        <Icon href='/' className='active' toggle={toggle}>
+        <Icon
+          to='/'
+          className={(navData) => (navData.isActive ? 'active' : '')}
+          toggle={toggle}>
           <AiFillHome />
         </Icon>
       </li>
       <li>
-        <Icon href='/' toggle={toggle}>
+        <Icon
+          to='/about'
+          className={(navData) => (navData.isActive ? 'active' : '')}
+          toggle={toggle}>
           <FaUserAlt />
         </Icon>
       </li>
       <li>
-        <Icon href='/' toggle={toggle}>
+        <Icon
+          to='/projects'
+          className={(navData) => (navData.isActive ? 'active' : '')}
+          toggle={toggle}>
           <GoProject />
         </Icon>
       </li>
       <li>
-        <Icon href='/' toggle={toggle}>
+        <Icon
+          to='/skills'
+          className={(navData) => (navData.isActive ? 'active' : '')}
+          toggle={toggle}>
           <HiOutlineCode />
         </Icon>
       </li>

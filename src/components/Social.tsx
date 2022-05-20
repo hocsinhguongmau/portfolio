@@ -2,12 +2,12 @@ import React from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import styled from 'styled-components'
 import useToggleStore from '~/store/themeStore'
-import { TEXT_DARK, TEXT_LIGHT } from '~/styled/Themes'
+import { BODY_DARK, BODY_LIGHT, TEXT_DARK, TEXT_LIGHT } from '~/styled/Themes'
 
 const NavWrapper = styled.nav`
   position: absolute;
   bottom: 0;
-  left: 10px;
+  right: 10px;
   z-index: 100;
 `
 
@@ -29,8 +29,10 @@ const NavLink = styled.a`
   color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
   line-height: 1.2rem;
   &:hover {
-    background: #000;
-    color: #fff;
+    background: ${(props: ThemePropsType) =>
+      props.toggle ? BODY_LIGHT : BODY_DARK};
+    color: ${(props: ThemePropsType) =>
+      props.toggle ? TEXT_LIGHT : TEXT_DARK};
   }
 `
 

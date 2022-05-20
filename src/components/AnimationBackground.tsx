@@ -28,7 +28,7 @@ function Model() {
   )
 }
 const Background = styled.div`
-  height: 150px;
+  height: 250px;
   z-index: 10;
   position: relative;
   padding-top: 20px;

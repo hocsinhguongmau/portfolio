@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useToggleStore from '~/store/themeStore'
 import { BACKGROUND_DARK, BACKGROUND_LIGHT } from '~/styled/Themes'
 import AnimationBackground from './AnimationBackground'
+import Copyright from './Copyright'
 
 const WrapSidePanel = styled.div`
   width: 300px;
@@ -32,6 +33,7 @@ function SidePanel() {
     <WrapSidePanel>
       <PanelBackground />
       <AnimationBackground />
+      <Copyright />
     </WrapSidePanel>
   )
 }
