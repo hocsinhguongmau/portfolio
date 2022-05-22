@@ -44,8 +44,10 @@ const InfoTitle = styled.h2`
 `
 
 const WrapInterest = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
   padding: 0 1rem;
 `
 
@@ -65,7 +67,7 @@ function Info() {
   const toggle = useToggleStore((state) => state.toggle)
   return (
     <div>
-      <InfoTitle toggle={toggle}>Personal Information</InfoTitle>
+      <InfoTitle toggle={toggle}>Contact</InfoTitle>
       <WrapInfo toggle={toggle}>
         <li>
           <a href='mailto:thangnguyen24111990@gmail.com'>
@@ -84,6 +86,10 @@ function Info() {
       </WrapInfo>
       <InfoTitle toggle={toggle}>Interest</InfoTitle>
       <WrapInterest>
+        <Interest>
+          <FaMusic />
+          Music
+        </Interest>
         <Interest>
           <FaMusic />
           Music

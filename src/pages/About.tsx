@@ -15,7 +15,16 @@ const Text = styled.p`
   line-height: 1.5rem;
   margin: 0.75rem 0;
 `
-
+const Background = styled.div`
+  background-color: #ffffff;
+  background-image: url('/images/about-bg.svg');
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
 function About() {
   const variants = {
     initial: { opacity: 0, y: '100px', scale: 0.5 },

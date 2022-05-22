@@ -11,14 +11,14 @@ import {
   TEXT_DARK,
   TEXT_LIGHT,
 } from '~/styled/Themes'
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   margin-left: auto;
   margin-right: auto;
   position: relative;
   text-align: center;
   max-width: 48rem;
 `
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   font-size: 2rem;
   padding-bottom: 1rem;
 `
@@ -41,6 +41,7 @@ const WrapSkills = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 0.25rem;
+  font-size:0.75rem;
   &:hover {
     background: ${(props: ThemePropsType) =>
       props.toggle ? SVG_DARK_3 : SVG_LIGHT_3};
@@ -54,61 +55,78 @@ const WrapSkills = styled.div`
 `
 function Skills() {
   const toggle = useToggleStore((state) => state.toggle)
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
 
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'ease-in' },
+    },
+  }
   return (
-    <div>
-      <Wrapper>
-        <Title>Skills</Title>
-        <WrapSkills toggle={toggle}>
-          <div className='row'>
-            <div className='hexagon'>
+    <Wrapper variants={container} initial='hidden' animate='show'>
+      <Title variants={item}>Skills</Title>
+      <WrapSkills toggle={toggle}>
+        <div>
+          <motion.div className='row'>
+            <motion.div className='hexagon' variants={item}>
               <FaReact />
               React
-            </div>
+            </motion.div>
+          </motion.div>
+          <div className='row'>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              React
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              React
+            </motion.div>
           </div>
           <div className='row'>
-            <div className='hexagon'>
+            <motion.div className='hexagon' variants={item}>
               <FaReact />
               React
-            </div>
-            <div className='hexagon'>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
               <FaReact />
               React
-            </div>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              React
+            </motion.div>
           </div>
           <div className='row'>
-            <div className='hexagon'>
+            <motion.div className='hexagon' variants={item}>
               <FaReact />
               React
-            </div>
-            <div className='hexagon'>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
               <FaReact />
               React
-            </div>
-            <div className='hexagon'>
-              <FaReact />
-              React
-            </div>
+            </motion.div>
           </div>
           <div className='row'>
-            <div className='hexagon'>
+            <motion.div className='hexagon' variants={item}>
               <FaReact />
               React
-            </div>
-            <div className='hexagon'>
-              <FaReact />
-              React
-            </div>
+            </motion.div>
           </div>
-          <div className='row'>
-            <div className='hexagon'>
-              <FaReact />
-              React
-            </div>
-          </div>
-        </WrapSkills>
-      </Wrapper>
-    </div>
+        </div>
+      </WrapSkills>
+    </Wrapper>
   )
 }
 

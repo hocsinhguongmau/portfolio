@@ -34,14 +34,13 @@ function Model() {
   })
 
   return (
-    <primitive ref={ship} scale={1.5} object={scene} position={[0, 0, 0]} />
+    <primitive ref={ship} scale={1.5} object={scene} position={[0, -1, 0]} />
   )
 }
 const Background = styled.div`
   height: 250px;
   z-index: 10;
   position: relative;
-  padding-top: 20px;
 `
 
 function AnimationBackground() {

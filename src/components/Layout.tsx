@@ -115,9 +115,10 @@ const Layout = ({ children }: Props) => {
       <ToggleDarkMode />
       <Social />
       <WrapChild>
+        <Navigation />
+
         <BackgroundBot />
         <BackgroundTop />
-        <Navigation />
         {children}
       </WrapChild>
     </WrapLayout>
