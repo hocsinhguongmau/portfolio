@@ -8,7 +8,6 @@ const ToggleButton = () => {
   const toggle = useToggleStore((state) => state.toggle)
   const setToggle = useToggleStore((state) => state.setToggle)
   const ref = useRef<any>(null)
-
   const toggleButton = () => {
     if (!toggle) {
       ref.current.playSegments([45, 0], true)
