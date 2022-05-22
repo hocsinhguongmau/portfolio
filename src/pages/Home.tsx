@@ -183,7 +183,7 @@ const Home = () => {
         <TextWrapper>
           <Title>Hello</Title>
           <Line>My name is Thang Nguyen</Line>
-          <Line>Frontend developer based in Helsinki</Line>
+          <Line>Frontend Developer based in Finland</Line>
         </TextWrapper>
       </Wrapper>
     </motion.div>

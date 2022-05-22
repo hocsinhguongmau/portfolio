@@ -33,6 +33,10 @@ const WrapInfo = styled.ul`
 const InfoTitle = styled.h2`
   margin: 0;
   padding: 0;
+  margin-top: 2rem;
+  &:first-child {
+    margin-top: 0;
+  }
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
