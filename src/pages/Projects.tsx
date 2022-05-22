@@ -37,7 +37,7 @@ const WrapProject = styled.div`
       padding: 0.5rem 1rem;
       top: 0;
       left: 0;
-      transform: translateY(calc(100% - 40px));
+      transform: translateY(calc(100% - 45px));
       z-index: 10;
       display: block;
       vertical-align: top;
