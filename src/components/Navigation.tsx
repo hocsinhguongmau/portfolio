@@ -14,7 +14,7 @@ import {
   TEXT_DARK,
   TEXT_LIGHT,
 } from '~/styled/Themes'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const List = styled.div`
   position: absolute;
@@ -29,17 +29,14 @@ const List = styled.div`
   list-style: none;
   display: flex;
   flex-direction: row;
-  transition: all 0.3s ease-in;
   gap: 0.75rem;
-`
-const Icon = styled(NavLink)`
+  a{
   color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
   font-size: 1.5rem;
   line-height: 0.75rem;
   padding: 0.75rem;
   border-radius: 100%;
   display: block;
-  transition: all ease-in 0.3s;
   &:hover,
   &.active {
     background: ${(props: ThemePropsType) =>
@@ -54,36 +51,32 @@ function Navigation() {
   return (
     <List toggle={toggle}>
       <li>
-        <Icon
+        <NavLink
           to='/'
-          className={(navData) => (navData.isActive ? 'active' : '')}
-          toggle={toggle}>
+          className={(navData) => (navData.isActive ? 'active' : '')}>
           <AiFillHome />
-        </Icon>
+        </NavLink>
       </li>
       <li>
-        <Icon
+        <NavLink
           to='/about'
-          className={(navData) => (navData.isActive ? 'active' : '')}
-          toggle={toggle}>
+          className={(navData) => (navData.isActive ? 'active' : '')}>
           <FaUserAlt />
-        </Icon>
+        </NavLink>
       </li>
       <li>
-        <Icon
+        <NavLink
           to='/projects'
-          className={(navData) => (navData.isActive ? 'active' : '')}
-          toggle={toggle}>
+          className={(navData) => (navData.isActive ? 'active' : '')}>
           <GoProject />
-        </Icon>
+        </NavLink>
       </li>
       <li>
-        <Icon
+        <NavLink
           to='/skills'
-          className={(navData) => (navData.isActive ? 'active' : '')}
-          toggle={toggle}>
+          className={(navData) => (navData.isActive ? 'active' : '')}>
           <HiOutlineCode />
-        </Icon>
+        </NavLink>
       </li>
     </List>
   )

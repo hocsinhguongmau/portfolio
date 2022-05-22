@@ -24,7 +24,6 @@ const Navigation = styled.ul`
 const NavLink = styled.a`
   padding: 0.5rem;
   display: block;
-  transition: all ease-in 0.3s;
   border-radius: 100%;
   color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
   line-height: 1.2rem;
@@ -44,7 +43,6 @@ const Line = styled.span`
     props.toggle ? TEXT_DARK : TEXT_LIGHT};
   margin-left: auto;
   margin-right: auto;
-  transition: all ease-in 0.3s;
 `
 
 function Social() {

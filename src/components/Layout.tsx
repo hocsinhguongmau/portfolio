@@ -24,12 +24,11 @@ type Props = {
 }
 const WrapLayout = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  transition: all 0.3s ease-in;
   background: ${(props: ThemePropsType) =>
     props.toggle ? BODY_DARK : BODY_LIGHT};
   color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
@@ -108,17 +107,8 @@ const BackgroundTop = () => {
 }
 
 const Layout = ({ children }: Props) => {
-  const { mouse, setMouse } = useMouseStore()
   const toggle = useToggleStore((state: any) => state.toggle)
-  useEffect(() => {
-    const update = (e: MouseEvent) => {
-      setMouse({ x: e.x, y: e.y })
-    }
-    window.addEventListener('mousemove', update)
-    return () => {
-      window.removeEventListener('mousemove', update)
-    }
-  }, [mouse.x, mouse.y])
+
   return (
     <WrapLayout toggle={toggle}>
       <SidePanel />

@@ -1,4 +1,4 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import useToggleStore from '~/store/themeStore'
@@ -14,9 +14,19 @@ type ModelType = {
 }
 
 function Model() {
+  const { mouse, setMouse } = useMouseStore()
+
+  useEffect(() => {
+    const update = (e: MouseEvent) => {
+      setMouse({ x: e.x, y: e.y })
+    }
+    window.addEventListener('mousemove', update)
+    return () => {
+      window.removeEventListener('mousemove', update)
+    }
+  }, [mouse.x, mouse.y])
   const { scene } = useGLTF('/models/background/scene.gltf')
   const ship = useRef<ModelType>()
-  const mouse = useMouseStore((state) => state.mouse)
   useFrame(() => {
     ship.current!.rotation.z = -mouse.x / 3000
     ship.current!.rotation.y = mouse.x / 5000
