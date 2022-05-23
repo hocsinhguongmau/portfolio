@@ -11,11 +11,11 @@ const ToggleButton = () => {
   const toggleButton = () => {
     if (!toggle) {
       ref.current.playSegments([45, 0], true)
-      ref.current.setSpeed(3)
+      ref.current.setSpeed(4)
       setToggle(true)
     } else {
       ref.current.playSegments([0, 45], true)
-      ref.current.setSpeed(3)
+      ref.current.setSpeed(4)
       setToggle(false)
     }
   }

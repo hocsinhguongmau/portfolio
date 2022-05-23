@@ -5,7 +5,6 @@ import { BACKGROUND_DARK, BACKGROUND_LIGHT } from '~/styled/Themes'
 import AnimationBackground from './AnimationBackground'
 import Copyright from './Copyright'
 import Info from './Info'
-import SideNav from './SideNav'
 
 const WrapSidePanel = styled.div`
   width: 300px;

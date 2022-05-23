@@ -28,6 +28,10 @@ const WrapSkills = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  &:nth-child(odd){
+    flex-direction: row-reverse;
+    d
+  }
   .hexagon{
   width: 5rem;
   height: 5rem;
@@ -70,7 +74,7 @@ function Skills() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { type: 'ease-in' },
+      transition: { type: 'ease-in', duration: 0.3 },
     },
   }
   return (
@@ -87,41 +91,73 @@ function Skills() {
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
               <FaReact />
-              React
+              Next
             </motion.div>
             <motion.div className='hexagon' variants={item}>
               <FaReact />
-              React
-            </motion.div>
-          </div>
-          <div className='row'>
-            <motion.div className='hexagon' variants={item}>
-              <FaReact />
-              React
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <FaReact />
-              React
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <FaReact />
-              React
+              Javascript
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
               <FaReact />
-              React
+              HTML5
             </motion.div>
             <motion.div className='hexagon' variants={item}>
               <FaReact />
-              React
+              CSS3
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              Tailwinds
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
               <FaReact />
-              React
+              Typescript
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              Jest
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              Cypress
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              RTL
+            </motion.div>
+          </div>
+          <div className='row'>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              GraphQL
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              Storybook
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              D3.js
+            </motion.div>
+          </div>
+          <div className='row'>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              Git
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              JQuery
+            </motion.div>
+          </div>
+          <div className='row'>
+            <motion.div className='hexagon' variants={item}>
+              <FaReact />
+              Sanity.io
             </motion.div>
           </div>
         </div>

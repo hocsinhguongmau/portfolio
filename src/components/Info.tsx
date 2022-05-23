@@ -2,6 +2,7 @@ import React from 'react'
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai'
 import { FaDumbbell, FaMusic } from 'react-icons/fa'
 import { GoLocation } from 'react-icons/go'
+import { HiOutlineCode } from 'react-icons/hi'
 import styled from 'styled-components'
 import useToggleStore from '~/store/themeStore'
 import { TEXT_DARK, TEXT_LIGHT } from '~/styled/Themes'
@@ -47,7 +48,7 @@ const WrapInterest = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0 1rem;
 `
 
@@ -84,15 +85,15 @@ function Info() {
           Helsinki, Finland
         </li>
       </WrapInfo>
-      <InfoTitle toggle={toggle}>Interest</InfoTitle>
+      <InfoTitle toggle={toggle}>Hobbies</InfoTitle>
       <WrapInterest>
         <Interest>
           <FaMusic />
           Music
         </Interest>
         <Interest>
-          <FaMusic />
-          Music
+          <HiOutlineCode />
+          Programing
         </Interest>
         <Interest>
           <FaDumbbell />
