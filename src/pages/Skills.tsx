@@ -19,7 +19,11 @@ import useToggleStore from '~/store/themeStore'
 import {
   BACKGROUND_DARK,
   BACKGROUND_LIGHT,
+  SVG_DARK_1,
+  SVG_DARK_2,
   SVG_DARK_3,
+  SVG_LIGHT_1,
+  SVG_LIGHT_2,
   SVG_LIGHT_3,
   TEXT_DARK,
   TEXT_LIGHT,
@@ -55,11 +59,22 @@ const WrapSkills = styled.div`
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   margin-top: -1.2rem;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.25rem;
   font-size:0.75rem;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+  .hexagon-border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 4.4rem;
+    height:4.4rem;
+    margin: auto;
+    background: ${(props: ThemePropsType) =>
+      props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  }
   &:hover {
     background: ${(props: ThemePropsType) =>
       props.toggle ? SVG_DARK_3 : SVG_LIGHT_3};
@@ -98,80 +113,112 @@ function Skills() {
         <div>
           <motion.div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
-              React
+              <div className='hexagon-border'>
+                <FaReact />
+                React
+              </div>
             </motion.div>
           </motion.div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <SiNextdotjs />
-              Next
+              <div className='hexagon-border'>
+                <SiNextdotjs />
+                Next
+              </div>
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <DiJavascript1 />
-              Javascript
-            </motion.div>
-          </div>
-          <div className='row'>
-            <motion.div className='hexagon' variants={item}>
-              <AiFillHtml5 />
-              HTML5
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <DiCss3 />
-              CSS3
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <SiTailwindcss />
-              Tailwinds
+              <div className='hexagon-border'>
+                <DiJavascript1 />
+                Javascript
+              </div>
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <SiTypescript />
-              Typescript
+              <div className='hexagon-border'>
+                <AiFillHtml5 />
+                HTML5
+              </div>
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <SiJest />
-              Jest
+              <div className='hexagon-border'>
+                <DiCss3 />
+                CSS3
+              </div>
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <SiCypress />
-              Cypress
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <SiTestinglibrary />
-              RTL
-            </motion.div>
-          </div>
-          <div className='row'>
-            <motion.div className='hexagon' variants={item}>
-              <SiGraphql />
-              GraphQL
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <SiStorybook />
-              Storybook
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <SiD3Dotjs />
-              D3.js
+              <div className='hexagon-border'>
+                <SiTailwindcss />
+                Tailwinds
+              </div>
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <AiFillGithub />
-              Git
+              <div className='hexagon-border'>
+                <SiTypescript />
+                Typescript
+              </div>
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <DiJqueryLogo />
-              JQuery
+              <div className='hexagon-border'>
+                <SiJest />
+                Jest
+              </div>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <SiCypress />
+                Cypress
+              </div>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <SiTestinglibrary />
+                RTL
+              </div>
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <SiStyledcomponents />
-              Styled
+              <div className='hexagon-border'>
+                <SiGraphql />
+                GraphQL
+              </div>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <SiStorybook />
+                Storybook
+              </div>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <SiD3Dotjs />
+                D3.js
+              </div>
+            </motion.div>
+          </div>
+          <div className='row'>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <AiFillGithub />
+                Git
+              </div>
+            </motion.div>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <DiJqueryLogo />
+                JQuery
+              </div>
+            </motion.div>
+          </div>
+          <div className='row'>
+            <motion.div className='hexagon' variants={item}>
+              <div className='hexagon-border'>
+                <SiStyledcomponents />
+                Styled
+              </div>
             </motion.div>
           </div>
         </div>
