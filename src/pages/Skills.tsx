@@ -2,6 +2,19 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { FaReact } from 'react-icons/fa'
+import {
+  SiCypress,
+  SiD3Dotjs,
+  SiGraphql,
+  SiJest,
+  SiNextdotjs,
+  SiStorybook,
+  SiStyledcomponents,
+  SiTailwindcss,
+  SiTestinglibrary,
+  SiTypescript,
+} from 'react-icons/si'
+import { DiCss3, DiJavascript1, DiJqueryLogo } from 'react-icons/di'
 import useToggleStore from '~/store/themeStore'
 import {
   BACKGROUND_DARK,
@@ -11,6 +24,7 @@ import {
   TEXT_DARK,
   TEXT_LIGHT,
 } from '~/styled/Themes'
+import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai'
 const Wrapper = styled(motion.div)`
   margin-left: auto;
   margin-right: auto;
@@ -90,74 +104,74 @@ function Skills() {
           </motion.div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiNextdotjs />
               Next
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <DiJavascript1 />
               Javascript
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <AiFillHtml5 />
               HTML5
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <DiCss3 />
               CSS3
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiTailwindcss />
               Tailwinds
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiTypescript />
               Typescript
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiJest />
               Jest
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiCypress />
               Cypress
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiTestinglibrary />
               RTL
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiGraphql />
               GraphQL
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiStorybook />
               Storybook
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <SiD3Dotjs />
               D3.js
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <AiFillGithub />
               Git
             </motion.div>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
+              <DiJqueryLogo />
               JQuery
             </motion.div>
           </div>
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
-              <FaReact />
-              Sanity.io
+              <SiStyledcomponents />
+              Styled
             </motion.div>
           </div>
         </div>
