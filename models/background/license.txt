@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coffee cat in a cup
+* source:	https://sketchfab.com/3d-models/coffee-cat-in-a-cup-d75d42ecff964c56bdac548910644169
+* author:	Kwituki (https://sketchfab.com/kwituki)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coffee cat in a cup" (https://sketchfab.com/3d-models/coffee-cat-in-a-cup-d75d42ecff964c56bdac548910644169) by Kwituki (https://sketchfab.com/kwituki) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
