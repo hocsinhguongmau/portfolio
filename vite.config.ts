@@ -4,7 +4,7 @@ const path = require('path')
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio',
+  base: '/',
   resolve: {
     alias: {
       '~': path.resolve(__dirname, 'src'),
