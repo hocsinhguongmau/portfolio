@@ -77,8 +77,12 @@ const WrapSkills = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 0.25rem;
-    width: 3.2rem;
-    height:3.2rem;
+    width: 4.6rem;
+    height:4.6rem;
+    @media screen and (max-width: 767px) {
+      width:3.2rem;
+      height: 3.2rem;
+    }
     margin: auto;
     background: ${(props: ThemePropsType) =>
       props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
