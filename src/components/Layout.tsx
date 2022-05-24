@@ -15,6 +15,7 @@ import {
 } from '../styled/Themes'
 import useToggleStore from '~/store/themeStore'
 import ToggleDarkMode from './ToggleDarkMode'
+import SidePanel from './SidePanel'
 
 type Props = {
   children: JSX.Element
@@ -108,6 +109,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <WrapLayout toggle={toggle}>
+      <SidePanel />
       <ToggleDarkMode />
       <Social />
       <WrapChild>

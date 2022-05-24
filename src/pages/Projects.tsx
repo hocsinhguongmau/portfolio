@@ -54,7 +54,6 @@ const WrapProject = styled.div`
       vertical-align: top;
       text-decoration: none;
       color: inherit;
-      transition: all 0.2s ease-out;
       @media screen and (max-width: 767px) {
         transform: translateY(calc(100% - 22px));
         padding: 0.25rem 0.5rem;
@@ -77,6 +76,7 @@ const WrapProject = styled.div`
     &:hover {
       .project-panel {
         transform: translateY(0);
+        transition: all 0.2s ease-out;
       }
     }
   }
