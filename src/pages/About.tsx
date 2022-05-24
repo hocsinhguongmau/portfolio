@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   max-width: 48rem;
+  padding: 0 2rem;
 `
 const Title = styled.h1`
   font-size: 2rem;

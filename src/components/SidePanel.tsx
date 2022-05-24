@@ -1,4 +1,5 @@
 import React from 'react'
+import { isDesktop } from 'react-device-detect'
 import styled from 'styled-components'
 import useToggleStore from '~/store/themeStore'
 import { BACKGROUND_DARK, BACKGROUND_LIGHT } from '~/styled/Themes'
@@ -16,14 +17,24 @@ const WrapSidePanel = styled.div`
   background: ${(props: ThemePropsType) =>
     props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
 `
-
+const WrapImg = styled.div`
+  padding: 2rem;
+  text-align: center;
+`
+const CatImg = () => {
+  return (
+    <WrapImg>
+      <img src='/images/cat.webp' />
+    </WrapImg>
+  )
+}
 function SidePanel() {
   const toggle = useToggleStore((state) => state.toggle)
 
   return (
     <WrapSidePanel toggle={toggle}>
       <div>
-        <AnimationBackground />
+        {isDesktop ? <AnimationBackground /> : <CatImg />}
         <Info />
       </div>
       <Copyright />

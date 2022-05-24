@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   max-width: 48rem;
+  padding: 0 2rem;
 `
 const Title = styled.h1`
   font-size: 2rem;
@@ -19,6 +20,9 @@ const WrapProject = styled.div`
   gap: 1rem;
   max-height: 510px;
   overflow: auto;
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .project {
     position: relative;
     overflow: hidden;
@@ -79,6 +83,76 @@ function Projects() {
       <Wrapper>
         <Title>Projects</Title>
         <WrapProject toggle={toggle}>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
+          <div className='project'>
+            <img src='/images/projects/project-1.jpg' />
+            <a href='/' className='project-panel'>
+              <p className='title'>Project</p>
+              <p className='description'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
+                temporibus
+              </p>
+            </a>
+          </div>
           <div className='project'>
             <img src='/images/projects/project-1.jpg' />
             <a href='/' className='project-panel'>

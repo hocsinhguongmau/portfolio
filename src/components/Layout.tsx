@@ -48,7 +48,7 @@ const WrapBgBot = styled.div`
   bottom: -2rem;
   left: -4rem;
   z-index: 0;
-  width: 30%;
+  width: 60%;
   max-width: 30rem;
   transition: all 0.3s ease-in;
 `
@@ -79,7 +79,7 @@ const WrapBgTop = styled.div`
   top: -2rem;
   right: -4rem;
   z-index: 0;
-  width: 30%;
+  width: 60%;
   max-width: 30rem;
   transition: all 0.3s ease-in;
 `
@@ -111,12 +111,11 @@ const Layout = ({ children }: Props) => {
 
   return (
     <WrapLayout toggle={toggle}>
-      <SidePanel />
+      {/* <SidePanel /> */}
       <ToggleDarkMode />
       <Social />
       <WrapChild>
         <Navigation />
-
         <BackgroundBot />
         <BackgroundTop />
         {children}

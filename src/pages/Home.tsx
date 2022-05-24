@@ -28,12 +28,14 @@ const Title = styled.p`
 `
 
 const Line = styled.p`
-  font-size: 1.2rem /* 24px */;
-  line-height: 1rem /* 32px */;
+  font-size: 1.2rem
+  line-height: 1.5rem;
 `
 const WrapBgMain = styled.div`
-  width: 50%;
+  width: 90%;
   margin: auto;
+  max-width: 32rem;
+
   img {
     width: 100%;
   }
@@ -42,6 +44,9 @@ const TextWrapper = styled.div`
   position: absolute;
   top: 50%;
   width: calc(50% - 4rem);
+  @media screen and (max-width: 1023px) {
+    width: calc(70% - 4rem);
+  }
   left: 50%;
   margin-top: -1rem;
   transform: translate(-50%, -50%);
