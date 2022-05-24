@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import Navigation from './Navigation'
 import Social from './Social'
-import { useEffect } from 'react'
-import useMouseStore from '~/store/mouseStore'
 import {
   BODY_DARK,
   BODY_LIGHT,
@@ -17,7 +15,6 @@ import {
 } from '../styled/Themes'
 import useToggleStore from '~/store/themeStore'
 import ToggleDarkMode from './ToggleDarkMode'
-import SidePanel from './SidePanel'
 
 type Props = {
   children: JSX.Element
@@ -111,7 +108,6 @@ const Layout = ({ children }: Props) => {
 
   return (
     <WrapLayout toggle={toggle}>
-      {/* <SidePanel /> */}
       <ToggleDarkMode />
       <Social />
       <WrapChild>

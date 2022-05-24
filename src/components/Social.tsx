@@ -24,6 +24,10 @@ const Navigation = styled.ul`
   line-height: 2.25rem;
   list-style: none;
   margin: 0;
+  @media screen and (max-width: 767px) {
+    font-size: 1.5rem;
+    line-height: 1rem;
+  }
 `
 
 const NavLink = styled.a`
@@ -48,6 +52,9 @@ const Line = styled.span`
     props.toggle ? TEXT_DARK : TEXT_LIGHT};
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width: 767px) {
+    height: 3rem;
+  }
 `
 
 function Social() {

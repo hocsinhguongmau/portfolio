@@ -13,13 +13,20 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   padding-bottom: 1rem;
+  @media screen and (max-width: 767px) {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+  }
 `
 const WrapProject = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  max-height: 510px;
+  max-height: 30rem;
   overflow: auto;
+  @media screen and (max-width: 767px) {
+    max-height: 12rem;
+  }
   @media screen and (max-width: 1023px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -48,10 +55,17 @@ const WrapProject = styled.div`
       text-decoration: none;
       color: inherit;
       transition: all 0.2s ease-out;
+      @media screen and (max-width: 767px) {
+        transform: translateY(calc(100% - 22px));
+        padding: 0.25rem 0.5rem;
+      }
       .title {
         font-weight: bold;
         font-size: 1.5rem;
         margin: 0;
+        @media screen and (max-width: 767px) {
+          font-size: 0.75rem;
+        }
       }
       .description {
         margin: 0;

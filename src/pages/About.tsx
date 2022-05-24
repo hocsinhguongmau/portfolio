@@ -10,11 +10,18 @@ const Wrapper = styled.div`
 `
 const Title = styled.h1`
   font-size: 2rem;
+  @media screen and (max-width: 767px) {
+    font-size: 1.5rem;
+  }
 `
 const Text = styled.p`
   font-size: 1rem;
   line-height: 1.5rem;
   margin: 0.75rem 0;
+  @media screen and (max-width: 767px) {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
 `
 const Background = styled.div`
   background-color: #ffffff;

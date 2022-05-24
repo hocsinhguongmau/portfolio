@@ -45,6 +45,10 @@ const WrapToggle = styled.div`
   right: 0.5rem;
   z-index: 100;
   cursor: pointer;
+  @media screen and (max-width: 767px) {
+    width: 4rem;
+    top: 1.5rem;
+  }
 `
 
 function ToggleDarkMode() {

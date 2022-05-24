@@ -25,17 +25,24 @@ const Title = styled.p`
   line-height: 3rem;
   font-weight: bold;
   margin-bottom: 0;
+  @media screen and (max-width: 767px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 `
 
 const Line = styled.p`
   font-size: 1.2rem
   line-height: 1.5rem;
+  @media screen and (max-width: 767px) {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
 `
 const WrapBgMain = styled.div`
   width: 90%;
   margin: auto;
   max-width: 32rem;
-
   img {
     width: 100%;
   }

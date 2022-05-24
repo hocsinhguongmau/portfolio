@@ -39,6 +39,10 @@ const Wrapper = styled(motion.div)`
 const Title = styled(motion.h1)`
   font-size: 2rem;
   padding-bottom: 1rem;
+  @media screen and (max-width: 767px) {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
 `
 const WrapSkills = styled.div`
   margin: 0;
@@ -48,7 +52,6 @@ const WrapSkills = styled.div`
   justify-content: center;
   &:nth-child(odd){
     flex-direction: row-reverse;
-    d
   }
   .hexagon{
   width: 5rem;
@@ -60,6 +63,12 @@ const WrapSkills = styled.div`
   margin-top: -1.2rem;
   cursor: pointer;
   font-size:0.75rem;
+  @media screen and (max-width: 767px) {
+    width:3.4rem;
+    height: 3.4rem;
+    margin-top: -0.8rem;
+    font-size: 0.5rem;
+  }
   display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,8 +77,8 @@ const WrapSkills = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 0.25rem;
-    width: 4.4rem;
-    height:4.4rem;
+    width: 3.2rem;
+    height:3.2rem;
     margin: auto;
     background: ${(props: ThemePropsType) =>
       props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
@@ -84,6 +93,9 @@ const WrapSkills = styled.div`
     font-size: 1.5rem;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: 767px) {
+      font-size: 1rem;
+    }
   }
 `
 function Skills() {

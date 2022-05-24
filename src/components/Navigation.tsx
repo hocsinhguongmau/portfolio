@@ -30,6 +30,9 @@ const List = styled.div`
   display: flex;
   flex-direction: row;
   gap: 0.75rem;
+  @media screen and (max-width: 767px) {
+    gap: 0.25rem;
+  }
   a{
   color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
   font-size: 1.5rem;
@@ -37,6 +40,10 @@ const List = styled.div`
   padding: 0.75rem;
   border-radius: 100%;
   display: block;
+  @media screen and (max-width: 767px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
   &:hover,
   &.active {
     background: ${(props: ThemePropsType) =>
