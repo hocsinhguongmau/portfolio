@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
+import useToggleStore from '~/store/themeStore'
+import { SVG_DARK_3, SVG_LIGHT_3 } from '~/styled/Themes'
 const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -22,6 +24,11 @@ const Text = styled.p`
     font-size: 0.75rem;
     line-height: 1rem;
   }
+  span {
+    font-weight: bold;
+    color: ${(props: ThemePropsType) =>
+      props.toggle ? SVG_DARK_3 : SVG_LIGHT_3};
+  }
 `
 const Background = styled.div`
   background-color: #ffffff;
@@ -34,6 +41,7 @@ const Background = styled.div`
   justify-content: center;
 `
 function About() {
+  const toggle = useToggleStore((state) => state.toggle)
   const variants = {
     initial: { opacity: 0, y: '100px', scale: 0.5 },
     animate: {
@@ -47,17 +55,15 @@ function About() {
     <motion.div variants={variants} initial='initial' animate='animate'>
       <Wrapper>
         <Title>About me</Title>
-        <Text>I am a Frontend Developer from Helsinki, Finland</Text>
-        <Text>
-          I enjoy taking complex problems and turning them into simple and
-          beautiful interface designs. I also love the logic and structure of
-          coding and always strive into write elegant and efficient code whether
-          it be HTML, CSS or Javascript.
+        <Text toggle={toggle}>
+          A <span>Front-End web developer</span> passionate about creating
+          interactive applications with <span>React / NextJS</span>.
         </Text>
         <Text>
-          When I'm not coding, you'll find me in the gym or on the court
-          shooting some hoops.
+          I enjoy learning the latest web technologies to enhance my skills and
+          experience in web development.
         </Text>
+        <Text>When I'm not coding, you'll find me in the gym.</Text>
       </Wrapper>
     </motion.div>
   )

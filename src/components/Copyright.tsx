@@ -11,7 +11,7 @@ const WrapCopy = styled.div`
 `
 
 function Copyright() {
-  return <WrapCopy>2022</WrapCopy>
+  return <WrapCopy>&copy;2022</WrapCopy>
 }
 
 export default Copyright

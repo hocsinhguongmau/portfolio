@@ -48,19 +48,21 @@ const WrapProject = styled.div`
       padding: 0.5rem 1rem;
       top: 0;
       left: 0;
-      transform: translateY(calc(100% - 45px));
+      transform: translateY(calc(100% - 40px));
       z-index: 10;
       display: block;
       vertical-align: top;
       text-decoration: none;
       color: inherit;
+      transition: transform 0.2s ease-out;
+
       @media screen and (max-width: 767px) {
         transform: translateY(calc(100% - 22px));
         padding: 0.25rem 0.5rem;
       }
       .title {
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin: 0;
         @media screen and (max-width: 767px) {
           font-size: 0.75rem;
@@ -76,7 +78,6 @@ const WrapProject = styled.div`
     &:hover {
       .project-panel {
         transform: translateY(0);
-        transition: all 0.2s ease-out;
       }
     }
   }
@@ -98,92 +99,27 @@ function Projects() {
         <Title>Projects</Title>
         <WrapProject toggle={toggle}>
           <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
+            <img src='/images/projects/project-1.webp' />
+            <a
+              href='https://perfume.vercel.app/'
+              target='_blank'
+              className='project-panel'>
+              <p className='title'>Store</p>
               <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
+                Making an e-commerce website with Sanity.io and NextJS.
               </p>
             </a>
           </div>
           <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
+            <img src='/images/projects/project-2.webp' />
+            <a
+              href='https://pepperattack.com/'
+              target='_blank'
+              className='project-panel'>
+              <p className='title'>Pepper Attack</p>
               <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
-              </p>
-            </a>
-          </div>
-          <div className='project'>
-            <img src='/images/projects/project-1.jpg' />
-            <a href='/' className='project-panel'>
-              <p className='title'>Project</p>
-              <p className='description'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At qui
-                temporibus
+                Collaborating with a Backend Developer to build a complete NFT
+                website.
               </p>
             </a>
           </div>

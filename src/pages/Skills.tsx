@@ -19,11 +19,7 @@ import useToggleStore from '~/store/themeStore'
 import {
   BACKGROUND_DARK,
   BACKGROUND_LIGHT,
-  SVG_DARK_1,
-  SVG_DARK_2,
   SVG_DARK_3,
-  SVG_LIGHT_1,
-  SVG_LIGHT_2,
   SVG_LIGHT_3,
   TEXT_DARK,
   TEXT_LIGHT,
@@ -58,7 +54,6 @@ const WrapSkills = styled.div`
   height: 5rem;
   background: ${(props: ThemePropsType) =>
     props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
-  color: ${(props: ThemePropsType) => (props.toggle ? TEXT_DARK : TEXT_LIGHT)};
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   margin-top: -1.2rem;
   cursor: pointer;
@@ -84,8 +79,8 @@ const WrapSkills = styled.div`
       height: 3.2rem;
     }
     margin: auto;
-    background: ${(props: ThemePropsType) =>
-      props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
+  background: ${(props: ThemePropsType) =>
+    props.toggle ? BACKGROUND_DARK : BACKGROUND_LIGHT};
       clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   }
   &:hover {
