@@ -8,13 +8,14 @@ import {
   SiGraphql,
   SiJest,
   SiNextdotjs,
+  SiRedux,
   SiStorybook,
   SiStyledcomponents,
   SiTailwindcss,
   SiTestinglibrary,
   SiTypescript,
 } from 'react-icons/si'
-import { DiCss3, DiJavascript1, DiJqueryLogo } from 'react-icons/di'
+import { DiCss3, DiJavascript1, DiJqueryLogo, DiSass } from 'react-icons/di'
 import useToggleStore from '~/store/themeStore'
 import {
   BACKGROUND_DARK,
@@ -193,8 +194,8 @@ function Skills() {
           <div className='row'>
             <motion.div className='hexagon' variants={item}>
               <div className='hexagon-border'>
-                <SiGraphql />
-                GraphQL
+                <DiSass />
+                Sass
               </div>
             </motion.div>
             <motion.div className='hexagon' variants={item}>
@@ -205,8 +206,8 @@ function Skills() {
             </motion.div>
             <motion.div className='hexagon' variants={item}>
               <div className='hexagon-border'>
-                <SiD3Dotjs />
-                D3.js
+                <SiRedux />
+                Redux
               </div>
             </motion.div>
           </div>
