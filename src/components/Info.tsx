@@ -71,9 +71,9 @@ function Info() {
       <InfoTitle toggle={toggle}>Contact</InfoTitle>
       <WrapInfo toggle={toggle}>
         <li>
-          <a href='mailto:thangnguyen24111990@gmail.com'>
+          <a href='mailto:thangnguyen.webdev@gmail.com'>
             <AiOutlineMail />
-            thangnguyen24111990@gmail.com
+            thangnguyen.webdev@gmail.com
           </a>
         </li>
         <li>

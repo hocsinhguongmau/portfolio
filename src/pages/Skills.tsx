@@ -200,32 +200,10 @@ function Skills() {
             </motion.div>
             <motion.div className='hexagon' variants={item}>
               <div className='hexagon-border'>
-                <SiStorybook />
-                Storybook
-              </div>
-            </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <div className='hexagon-border'>
-                <SiRedux />
-                Redux
-              </div>
-            </motion.div>
-          </div>
-          <div className='row'>
-            <motion.div className='hexagon' variants={item}>
-              <div className='hexagon-border'>
                 <AiFillGithub />
                 Git
               </div>
             </motion.div>
-            <motion.div className='hexagon' variants={item}>
-              <div className='hexagon-border'>
-                <DiJqueryLogo />
-                JQuery
-              </div>
-            </motion.div>
-          </div>
-          <div className='row'>
             <motion.div className='hexagon' variants={item}>
               <div className='hexagon-border'>
                 <SiStyledcomponents />

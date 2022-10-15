@@ -66,20 +66,20 @@ function Social() {
       <Navigation>
         <li>
           <NavLink
-            href='https://github.com/thang241190'
+            href='https://github.com/hocsinhguongmau'
             target='_blank'
             toggle={toggle}>
             <AiFillGithub />
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             href='https://www.linkedin.com/in/thang-nguyen-914764173/'
             target='_blank'
             toggle={toggle}>
             <AiFillLinkedin />
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <Line toggle={toggle} />
         </li>
