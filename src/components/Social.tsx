@@ -66,7 +66,7 @@ function Social() {
       <Navigation>
         <li>
           <NavLink
-            href='https://github.com/thang241190'
+            href='https://github.com/hocsinhguongmau'
             target='_blank'
             toggle={toggle}>
             <AiFillGithub />

@@ -114,8 +114,8 @@ const Layout = ({ children }: Props) => {
       <Social />
       <WrapChild>
         <Navigation />
-        <BackgroundBot />
-        <BackgroundTop />
+        {/* <BackgroundBot />
+        <BackgroundTop /> */}
         {children}
       </WrapChild>
     </WrapLayout>

@@ -73,7 +73,7 @@ function Info() {
         <li>
           <a href='mailto:thangnguyen24111990@gmail.com'>
             <AiOutlineMail />
-            thangnguyen24111990@gmail.com
+            thangnguyen.webdev@gmail.com
           </a>
         </li>
         <li>
