@@ -2,14 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { FaReact } from 'react-icons/fa'
+import { TbBrandReactNative } from 'react-icons/tb'
 import {
   SiCypress,
-  SiD3Dotjs,
-  SiGraphql,
   SiJest,
   SiNextdotjs,
   SiRedux,
-  SiStorybook,
   SiStyledcomponents,
   SiTailwindcss,
   SiTestinglibrary,
@@ -200,8 +198,8 @@ function Skills() {
             </motion.div>
             <motion.div className='hexagon' variants={item}>
               <div className='hexagon-border'>
-                <SiStorybook />
-                Storybook
+                <TbBrandReactNative />
+                React Query
               </div>
             </motion.div>
             <motion.div className='hexagon' variants={item}>
