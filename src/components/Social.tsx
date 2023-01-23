@@ -74,7 +74,7 @@ function Social() {
         </li>
         <li>
           <NavLink
-            href='https://www.linkedin.com/in/thang-nguyen-914764173/'
+            href='https://www.linkedin.com/in/thang-nguyen-033003263/'
             target='_blank'
             toggle={toggle}>
             <AiFillLinkedin />
